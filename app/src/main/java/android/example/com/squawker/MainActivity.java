@@ -35,6 +35,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -90,18 +92,18 @@ public class MainActivity extends AppCompatActivity implements
         // messages, this will contain key value pairs stored in the *data* section of the message.
         Bundle extras = getIntent().getExtras();
         // Checks if the extras exist and if the key "test" from our FCM message is in the intent
-        if (extras != null && extras.containsKey("test")) {
+        if (extras != null && extras.containsKey("Manvel")) {
             // If the key is there, print out the value of "test"
-            Log.d(LOG_TAG, "Contains: " + extras.getString("test"));
+            Log.d(LOG_TAG, "Contains: " + extras.getString("Manvel"));
         }
 
-        // TODO (1) Make a new package for your FCM service classes called "fcm"
-            // TODO (2) Create a new Service class that extends FirebaseInstanceIdService.
-            // You'll need to implement the onTokenRefresh method. Simply have it print out
-            // the new token.
-        // TODO (3) Here, in MainActivity, get a token using FirebaseInstanceId.getInstance().getToken()
-        // TODO (4) Get the message from that token and print it in a log statement
 
+        // DONE (3) Here, in MainActivity, get a token using FirebaseInstanceId.getInstance().getToken()
+        String token = FirebaseInstanceId.getInstance().getToken();
+
+        // DONE (4) Get the message from that token and print it in a log statement
+        String message = getString(R.string.message_token_format, token);
+        Log.d(LOG_TAG, message);
 
     }
 
