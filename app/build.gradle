@@ -32,14 +32,14 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.1.0'
 
     // Schematic dependencies for ContentProvider
-    apt 'net.simonvt.schematic:schematic-compiler:0.6.3'
-    compile 'net.simonvt.schematic:schematic:0.6.3'
+    annotationProcessor 'net.simonvt.schematic:schematic-compiler:0.7.0'
+    compile 'net.simonvt.schematic:schematic:0.7.0'
 
     // Preferences Dependencies
     compile 'com.android.support:preference-v7:25.1.0'
 
     // Firebase dependency
-    compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.google.firebase:firebase-messaging:11.0.2'
 }
 // Apply the Google Services plugin. Make sure to add the google-services.json file in the app
 // folder. You download it from the Firebase console
